@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void transformAndCalculate(String str) throws Exception {
         str = str.replaceAll("\\s*", "");
+        str = str.replaceAll("\\s", "");
         Stack<Character> mathCharacters = new Stack<>();
         ArrayList<String> formulaResult = new ArrayList<>();
         boolean isLastNumber = false;
@@ -125,19 +126,27 @@ public class MainActivity extends AppCompatActivity {
             switch (s) {
                 case "+":
                     return String.valueOf(Double.parseDouble(one) + Double.parseDouble(two));
+                case "＋":
+                    return String.valueOf(Double.parseDouble(one) + Double.parseDouble(two));
                 case "-":
                     return String.valueOf(Double.parseDouble(one) - Double.parseDouble(two));
                 case "—":
                     return String.valueOf(Double.parseDouble(one) - Double.parseDouble(two));
                 case "*":
                     return String.valueOf(Double.parseDouble(one) * Double.parseDouble(two));
+                case "＊":
+                    return String.valueOf(Double.parseDouble(one) * Double.parseDouble(two));
                 case "×":
                     return String.valueOf(Double.parseDouble(one) * Double.parseDouble(two));
                 case "/":
                     return String.valueOf(Double.parseDouble(one) / Double.parseDouble(two));
+                case "／":
+                    return String.valueOf(Double.parseDouble(one) / Double.parseDouble(two));
                 case "÷":
                     return String.valueOf(Double.parseDouble(one) / Double.parseDouble(two));
                 case "%":
+                    return String.valueOf(Integer.parseInt(one) % Integer.parseInt(two));
+                case "％":
                     return String.valueOf(Integer.parseInt(one) % Integer.parseInt(two));
                 default:
                     throw new Exception("符号不能识别");
@@ -156,14 +165,18 @@ public class MainActivity extends AppCompatActivity {
     private int getCharLevel(char newChar) {
         switch (newChar) {
             case '+':
+            case '＋':
             case '-':
             case '—':
                 return 1;
             case '*':
+            case '＊':
             case '×':
             case '/':
+            case '／':
             case '÷':
             case '%':
+            case '％':
                 return 2;
         }
         return 0;
@@ -171,13 +184,17 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean isRightMathChar(String character) {
         return character.equals("+")
+                || character.equals("＋")
                 || character.equals("-")
                 || character.equals("—")
                 || character.equals("*")
+                || character.equals("＊")
                 || character.equals("×")
                 || character.equals("/")
+                || character.equals("／")
                 || character.equals("÷")
                 || character.equals("%")
+                || character.equals("％")
                 || character.equals("(")
                 || character.equals(")")
                 || character.equals("（")

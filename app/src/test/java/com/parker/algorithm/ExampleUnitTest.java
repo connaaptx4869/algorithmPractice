@@ -1,4 +1,4 @@
-package com.parker.calculator;
+package com.parker.algorithm;
 
 import org.junit.Test;
 

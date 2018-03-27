@@ -1,4 +1,4 @@
-package com.parker.calculator;
+package com.parker.algorithm;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

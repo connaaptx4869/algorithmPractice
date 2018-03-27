@@ -1,4 +1,4 @@
-package com.parker.calculator;
+package com.parker.algorithm;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

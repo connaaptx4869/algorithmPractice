@@ -1,4 +1,4 @@
-package com.parker.calculator;
+package com.parker.algorithm;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +20,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PostfixActivity.class);
+                MainActivity.this.startActivity(intent);
+            }
+        });
+        findViewById(R.id.tv_coin_problem).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CoinProblemActivity.class);
+                MainActivity.this.startActivity(intent);
+            }
+        });
+        findViewById(R.id.tv_binaryTree).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BinaryTreeActivity.class);
                 MainActivity.this.startActivity(intent);
             }
         });
